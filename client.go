@@ -280,7 +280,9 @@ func (c *client) Connect() Token {
 
 		c.options.protocolVersionExplicit = true
 
+		DEBUG.Println(CLI, "Keep alive ???")
 		if c.options.KeepAlive != 0 {
+			DEBUG.Println(CLI, "Keep alive")
 			atomic.StoreInt32(&c.pingOutstanding, 0)
 			atomic.StoreInt64(&c.lastReceived, time.Now().Unix())
 			atomic.StoreInt64(&c.lastSent, time.Now().Unix())
