@@ -215,7 +215,7 @@ func (o *ClientOptions) SetStore(s Store) *ClientOptions {
 // server.
 func (o *ClientOptions) SetKeepAlive(k time.Duration) *ClientOptions {
 	o.KeepAlive = int64(k / time.Second)
-	DEBUG.Printf(CLI, "Set Keep Alive %d\n", o.KeepAlive)
+	DEBUG.Printf("Set Keep Alive %d\n", o.KeepAlive)
 	return o
 }
 
